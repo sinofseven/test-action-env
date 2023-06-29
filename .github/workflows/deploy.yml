@@ -1,0 +1,19 @@
+
+name: deploy
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  SECRET_WORDS: ${{ secrets.FIRST_WORD }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: |
+          date
+          echo $SECRET_WORDS
+          date
